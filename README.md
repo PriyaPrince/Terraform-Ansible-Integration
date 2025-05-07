@@ -9,30 +9,30 @@ Tools Used: Terraform, Ansible, AWS EC2, SSH.</br>
 🧱 Terraform Setup </br>
 🔹 Structure
 I created separate Terraform modules for:
-EC2 Instance
-Security Group
+EC2 Instance,
+Security Group.
 These were used inside a root main.tf file to ensure clean and reusable code.
 
-🔹 Local Exec for Inventory
+🔹 Local Exec for Inventory</br>
 In main.tf, I used a local-exec provisioner only to generate the Ansible inventory file dynamically:
 provisioner "local-exec" {
   command = "echo '[web]' > inventory && echo '${aws_instance.web_instance.public_ip}' >> inventory"
 }
 
-🔐 SSH Setup for Ansible
+🔐 SSH Setup for Ansible</br>
 Generated an SSH key pair (id_rsa and id_rsa.pub) on the Terraform server.
 Added the public key (id_rsa.pub) to the ~/.ssh/authorized_keys file on the remote EC2 instance.
 Used the private key with Ansible to connect to the instance.
 
-🤖 Ansible Configuration
+🤖 Ansible Configuration</br>
 I created a folder named ansible-playbooks and inside it, a playbook called TA_playbook.yml. 
 
-🔹 Ansible Command
+🔹 Ansible Command</br>
 ansible-playbook -i /home/ec2-user/Terraform-Asnsible_Intgratn_Prjct/inventory \
 /home/ec2-user/ansible-playbooks/TA_playbook.yml \
 --private-key ~/.ssh/id_rsa
 
-✅ Key Accomplishments
+✅ Key Accomplishments</br>
 Infrastructure as Code with modular Terraform
 
 Dynamic inventory creation with local-exec
