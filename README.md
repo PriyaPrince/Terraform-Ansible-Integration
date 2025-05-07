@@ -8,7 +8,7 @@ Tools Used: Terraform, Ansible, AWS EC2, SSH.</br>
 
 
 🧱 Terraform Setup </br>
-🔹 Structure
+🔹 Structure</br>
 I created separate Terraform modules for:
 EC2 Instance,
 Security Group.
