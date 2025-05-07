@@ -40,6 +40,8 @@ Dynamic inventory creation with local-exec
 
 Secure, key-based Ansible communication
 
+**************************************************************************************************************
+
 
 
 
