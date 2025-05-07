@@ -15,7 +15,7 @@ Security Group.
 These were used inside a root main.tf file to ensure clean and reusable code.
 
 🔹 Local Exec for Inventory</br>
-In main.tf, I used a local-exec provisioner only to generate the Ansible inventory file dynamically:
+In main.tf, I used a local-exec provisioner only to generate the Ansible inventory file dynamically:</br>
 provisioner "local-exec" {
   command = "echo '[web]' > inventory && echo '${aws_instance.web_instance.public_ip}' >> inventory"
 }
