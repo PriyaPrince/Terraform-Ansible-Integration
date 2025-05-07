@@ -6,7 +6,7 @@ Infrastructure Provisioning: Done using Terraform with reusable modules.</br>
 Configuration Management: Performed using Ansible.</br>
 Tools Used: Terraform, Ansible, AWS EC2, SSH.</br>
 
-🧱 Terraform Setup
+🧱 Terraform Setup </br>
 🔹 Structure
 I created separate Terraform modules for:
 EC2 Instance
