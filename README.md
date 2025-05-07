@@ -3,8 +3,8 @@ In this project, I’ll walk you through my simple yet effective DevOps project 
 
 <h4>🛠️ Project Overview</h4>
 Infrastructure Provisioning: Done using Terraform with reusable modules.</br>
-Configuration Management: Performed using Ansible.
-Tools Used: Terraform, Ansible, AWS EC2, SSH.
+Configuration Management: Performed using Ansible.</br>
+Tools Used: Terraform, Ansible, AWS EC2, SSH.</br>
 
 🧱 Terraform Setup
 🔹 Structure
