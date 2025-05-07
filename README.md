@@ -1,4 +1,4 @@
-<h1>Automating EC2 Setup with Terraform and Ansible: Integration Project<h1>
+<h1>Automating EC2 Setup with Terraform and Ansible: Integration Project</h1>
 In this project, I’ll walk you through my simple yet effective DevOps project where I integrated Terraform and Ansible to automate the provisioning and configuration of an EC2 instance on AWS. This hands-on project helped me solidify the basics of infrastructure as code (IaC) and configuration management.
 
 🛠️ Project Overview
@@ -28,22 +28,6 @@ Used the private key with Ansible to connect to the instance.
 
 🤖 Ansible Configuration
 I created a folder named ansible-playbooks and inside it, a playbook called TA_playbook.yml. 
-
-TA_playbook.yml:
-
-- name: Basic EC2 configuration
-  hosts: web
-  become: yes
-  tasks:
-    - name: Ensure a directory exists
-      file:
-        path: /tmp/ansible-demo
-        state: directory
-
-    - name: Install Nginx
-      package:
-        name: nginx
-        state: present
 
 🔹 Ansible Command
 ansible-playbook -i /home/ec2-user/Terraform-Asnsible_Intgratn_Prjct/inventory \
