@@ -38,13 +38,13 @@ Used the private key with Ansible to connect to the instance.
 🤖 Ansible Configuration
 Created a folder named ansible-playbooks.
 Inside it, I wrote the configuration logic in TA_playbook.yml.
-Ansible installs and configures services like Nginx or custom packages automatically right after instance creation.
+Ansible installs and configures service Nginx , automatically right after instance creation.
 
 ✅ Key Accomplishments</br>
 
-Infrastructure as Code using modular Terraform
-Dynamic inventory generation using Terraform local-exec
-Automated Ansible execution immediately after provisioning
+* Infrastructure as Code using modular Terraform
+- Dynamic inventory generation using Terraform local-exec
+- Automated Ansible execution immediately after provisioning
 Secure, key-based SSH communication with the EC2 instance
 Hands-free provisioning and configuration with a single terraform apply
 **************************************************************************************************************
