@@ -14,10 +14,20 @@ EC2 Instance,
 Security Group.
 These were used inside a root main.tf file to ensure clean and reusable code.
 
-🔹 Local Exec for Inventory</br>
-In main.tf, I used a local-exec provisioner only to generate the Ansible inventory file dynamically:</br>
-provisioner "local-exec" {
-  command = "echo '[web]' > inventory && echo '${aws_instance.web_instance.public_ip}' >> inventory"
+🔹 🔹 Dynamic Inventory & Ansible Execution via Terraform
+The entire process of inventory creation and playbook execution is automated using a null_resource and local-exec provisioner in Terraform.
+As soon as the EC2 instance is provisioned, Terraform dynamically creates the Ansible inventory file and triggers the Ansible playbook.
+
+resource "null_resource" "ansible_workflow" {
+  depends_on = [module.ec2]
+
+  provisioner "local-exec" {
+    command = <<EOT
+      echo "[web]" > inventory
+      echo "${module.ec2.instance_public_ip}" >> inventory
+      ansible-playbook -i inventory ansible-playbooks/TA_playbook.yml --private-key ~/.ssh/id_rsa
+    EOT
+  }
 }
 
 🔐 SSH Setup for Ansible</br>
@@ -25,21 +35,18 @@ Generated an SSH key pair (id_rsa and id_rsa.pub) on the Terraform server.
 Added the public key (id_rsa.pub) to the ~/.ssh/authorized_keys file on the remote EC2 instance.
 Used the private key with Ansible to connect to the instance.
 
-🤖 Ansible Configuration</br>
-I created a folder named ansible-playbooks and inside it, a playbook called TA_playbook.yml. 
-
-🔹 Ansible Command</br>
-ansible-playbook -i /home/ec2-user/Terraform-Asnsible_Intgratn_Prjct/inventory \
-/home/ec2-user/ansible-playbooks/TA_playbook.yml \
---private-key ~/.ssh/id_rsa
+🤖 Ansible Configuration
+Created a folder named ansible-playbooks.
+Inside it, I wrote the configuration logic in TA_playbook.yml.
+Ansible installs and configures services like Nginx or custom packages automatically right after instance creation.
 
 ✅ Key Accomplishments</br>
-Infrastructure as Code with modular Terraform
 
-Dynamic inventory creation with local-exec
-
-Secure, key-based Ansible communication
-
+Infrastructure as Code using modular Terraform
+Dynamic inventory generation using Terraform local-exec
+Automated Ansible execution immediately after provisioning
+Secure, key-based SSH communication with the EC2 instance
+Hands-free provisioning and configuration with a single terraform apply
 **************************************************************************************************************
 
 
