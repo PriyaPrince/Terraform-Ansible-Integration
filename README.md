@@ -18,6 +18,7 @@ These were used inside a root main.tf file to ensure clean and reusable code.
 The entire process of inventory creation and playbook execution is automated using a null_resource and local-exec provisioner in Terraform.
 As soon as the EC2 instance is provisioned, Terraform dynamically creates the Ansible inventory file and triggers the Ansible playbook.
 
+```
 resource "null_resource" "ansible_workflow" {
   depends_on = [module.ec2]
 
@@ -29,6 +30,7 @@ resource "null_resource" "ansible_workflow" {
     EOT
   }
 }
+```
 
 🔐 SSH Setup for Ansible</br>
 Generated an SSH key pair (id_rsa and id_rsa.pub) on the Terraform server.
