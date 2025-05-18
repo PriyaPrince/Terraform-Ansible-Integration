@@ -37,7 +37,7 @@ Generated an SSH key pair (id_rsa and id_rsa.pub) on the Terraform server.</br>
 Added the public key (id_rsa.pub) to the ~/.ssh/authorized_keys file on the remote EC2 instance.</br>
 Used the private key with Ansible to connect to the instance.
 
-🤖 Ansible Configuration
+🤖 Ansible Configuration</br>
 Created a folder named ansible-playbooks. </br>
 Inside it, I wrote the configuration logic in TA_playbook.yml.</br>
 Ansible installs and configures service Nginx , automatically right after instance creation.
