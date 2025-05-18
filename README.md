@@ -8,14 +8,14 @@ In this project, I’ll walk you through my simple yet effective DevOps project 
 - Tools Used: Terraform, Ansible, AWS EC2, SSH.
 
 
-🧱 <h3>Terraform Setup </h3>
+<h3>🧱 Terraform Setup </h3>
 🔹 Structure</br>
 I created separate Terraform modules for:
 EC2 Instance,
 Security Group.
 These were used inside a root main.tf file to ensure clean and reusable code.
 
-🔹 Dynamic Inventory & Ansible Execution via Terraform </br>
+<h3>🔹 Dynamic Inventory & Ansible Execution via Terraform </h3>
 The entire process of inventory creation and playbook execution is automated using a null_resource and local-exec provisioner in Terraform.
 As soon as the EC2 instance is provisioned, Terraform dynamically creates the Ansible inventory file and triggers the Ansible playbook.
 
@@ -33,17 +33,17 @@ resource "null_resource" "ansible_workflow" {
 }
 ```
 
-🔐 SSH Setup for Ansible</br>
+<h3>🔐 SSH Setup for Ansible</h3>
 Generated an SSH key pair (id_rsa and id_rsa.pub) on the Terraform server.</br>
 Added the public key (id_rsa.pub) to the ~/.ssh/authorized_keys file on the remote EC2 instance.</br>
 Used the private key with Ansible to connect to the instance.
 
-🤖 Ansible Configuration</br>
+<h3>🤖 Ansible Configuration</h3>
 Created a folder named ansible-playbooks. </br>
 Inside it, I wrote the configuration logic in TA_playbook.yml.</br>
 Ansible installs and configures service Nginx , automatically right after instance creation.
 
-✅ Key Accomplishments</br>
+<h3>✅ Key Accomplishments</h3>
 
 * Infrastructure as Code using modular Terraform
 - Dynamic inventory generation using Terraform local-exec
