@@ -2,9 +2,9 @@
 In this project, I’ll walk you through my simple yet effective DevOps project where I integrated Terraform and Ansible to automate the provisioning and configuration of an EC2 instance on AWS. This hands-on project helped me solidify the basics of infrastructure as code (IaC) and configuration management.
 
 <h4>🛠️ Project Overview</h4>
-Infrastructure Provisioning: Done using Terraform with reusable modules.</br>
-Configuration Management: Performed using Ansible.</br>
-Tools Used: Terraform, Ansible, AWS EC2, SSH.</br>
+* Infrastructure Provisioning: Done using Terraform with reusable modules.</br>
+- Configuration Management: Performed using Ansible.</br>
+- Tools Used: Terraform, Ansible, AWS EC2, SSH.</br>
 
 
 🧱 Terraform Setup </br>
@@ -45,8 +45,8 @@ Ansible installs and configures service Nginx , automatically right after instan
 * Infrastructure as Code using modular Terraform
 - Dynamic inventory generation using Terraform local-exec
 - Automated Ansible execution immediately after provisioning
-Secure, key-based SSH communication with the EC2 instance
-Hands-free provisioning and configuration with a single terraform apply
+- Secure, key-based SSH communication with the EC2 instance
+- Hands-free provisioning and configuration with a single terraform apply
 **************************************************************************************************************
 
 
