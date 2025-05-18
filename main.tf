@@ -24,6 +24,7 @@ resource "null_resource" "generate_inventory" {
     command = <<EOT
       echo "[web]" > inventory
       echo "${module.ec2.instance_public_ip}" >> inventory
+      ansible-playbook -i inventory ansible-playbooks/TA_playbook.yml --private-key ~/.ssh/id_rsa
     EOT
   }
 }
