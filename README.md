@@ -8,7 +8,7 @@ In this project, I’ll walk you through my simple yet effective DevOps project 
 - Tools Used: Terraform, Ansible, AWS EC2, SSH.
 
 
-🧱 Terraform Setup </br>
+🧱 **Terraform Setup** </br>
 🔹 Structure</br>
 I created separate Terraform modules for:
 EC2 Instance,
