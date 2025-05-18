@@ -14,7 +14,7 @@ EC2 Instance,
 Security Group.
 These were used inside a root main.tf file to ensure clean and reusable code.
 
-🔹 🔹 Dynamic Inventory & Ansible Execution via Terraform
+🔹 Dynamic Inventory & Ansible Execution via Terraform
 The entire process of inventory creation and playbook execution is automated using a null_resource and local-exec provisioner in Terraform.
 As soon as the EC2 instance is provisioned, Terraform dynamically creates the Ansible inventory file and triggers the Ansible playbook.
 
